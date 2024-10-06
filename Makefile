@@ -10,5 +10,14 @@ format:
 
 lint:
 	ruff check *.py mylib/*.py
-		
-all: install lint test format
+
+generate_and_push:
+	python main.py
+	git config --local user.email "action@github.com"
+	git config --local user.name "GitHub Action"
+	git pull
+	git add .
+	git commit -m "rerun push" --allow-empty
+	git push
+
+all: install lint test format generate_and_push
