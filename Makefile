@@ -11,4 +11,4 @@ format:
 lint:
 	ruff check *.py mylib/*.py
 		
-all: install lint test format deploy
+all: install lint test format
