@@ -13,7 +13,8 @@ def load():
     c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS CancerDB")
     c.execute(
-        "CREATE TABLE CancerDB (id,diagnosis,radius_mean,texture_mean,perimeter_mean,area_mean,smoothness_mean)"
+        """CREATE TABLE CancerDB (id,diagnosis,radius_mean,
+        texture_mean,perimeter_mean,area_mean,smoothness_mean)"""
     )
     # insert
     c.executemany("INSERT INTO CancerDB VALUES (?, ?, ?, ?, ?, ?, ?)", payload)
@@ -22,5 +23,5 @@ def load():
     return "CancerDB.db"
 
 
-# if __name__ == "__main__":
-#     load()
+if __name__ == "__main__":
+    load()

@@ -1,9 +1,11 @@
-from mylib.extract import extract
-from mylib.transform_load import load
-from mylib.query import create
-from mylib.query import read
-from mylib.query import update
-from mylib.query import delete
+from extract import extract
+from transform_load import load
+
+# from query import create
+# from query import read
+# from query import update
+# from query import delete
+from query import crud
 
 if __name__ == "__main__":
     url = "https://raw.githubusercontent.com/nogibjj/ag825_sqlite_lab/refs/heads/main/Cancer_Data.csv"
@@ -20,7 +22,9 @@ if __name__ == "__main__":
 
     # Query
     print("Querying data...")
-    create(database)
-    read(database)
+    crud()
+    # read(database)
+    # create(database)
+
     # update(database)
     # delete(database)

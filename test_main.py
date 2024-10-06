@@ -1,20 +1,34 @@
-from mylib.query import create
-from mylib.query import read
-from mylib.query import update
-from mylib.query import delete
+from query import create
+from query import read
+from query import update
+from query import delete
 
 
 def test_create():
-    assert create() == "Success"
+    database = "CancerDB.db"
+    assert create(database) == "Success"
 
 
 def test_read():
-    assert read() == "Success"
+    database = "CancerDB.db"
+    assert read(database) == "Success"
 
 
 def test_update():
-    assert update() == "Success"
+    database = "CancerDB.db"
+    assert update(database) == "Success"
 
 
 def test_delete():
-    assert delete() == "Success"
+    database = "CancerDB.db"
+    assert delete(database) == "Success"
+
+
+if __name__ == "__main__":
+
+    database = "CancerDB.db"
+
+    test_create()
+    test_read()
+    test_update()
+    test_delete()
