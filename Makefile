@@ -15,7 +15,7 @@ generate_and_push:
 	python main.py
 	git config --local user.email "action@github.com"
 	git config --local user.name "GitHub Action"
-	git checkout --CancerDB.db
+	git checkout -- CancerDB.db
 	git pull
 	git add .
 	git commit -m "rerun push" --allow-empty
