@@ -6,7 +6,7 @@ Duke University, Fall 2024 <br >
 ##
 
 ### About the project
-[![CI](https://github.com/nogibjj/ag825_mini_project_pandas_descriptive_stats/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/ag825_mini_project_pandas_descriptive_stats/actions/workflows/hello.yml) <br>
+[![CI](https://github.com/nogibjj/ag825_sqlite_lab/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/ag825_sqlite_lab/actions/workflows/cicd.yml) <br>
 
 The aim with this project was to read a .csv file, read it into a database and perform CRUD (Create, Read, Update, Delete) operations on the database. We also use matrix testing to ensure that this file runs on the following versions of Python:
 - Python 3.7
