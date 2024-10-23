@@ -18,6 +18,6 @@ generate_and_push:
 	git pull
 	git add .
 	git commit -m "rerun push" --allow-empty
-	git push
+	git push origin main
 
 all: install lint test format generate_and_push
