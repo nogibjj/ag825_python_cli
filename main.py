@@ -55,7 +55,7 @@ def handle_arguments(args):
 def main():
     url = "https://raw.githubusercontent.com/nogibjj/ag825_sqlite_lab/refs/heads/main/Cancer_Data.csv"
     file_path = "Cancer_Data.csv"
-    database = "CancerDB.db"
+    # database = "CancerDB.db"
 
     """handles all the cli commands"""
     args = handle_arguments(sys.argv[1:])
