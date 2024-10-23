@@ -40,7 +40,7 @@ def handle_arguments(args):
     parser = argparse.ArgumentParser(description="CRUD Script")
     parser.add_argument(
         "action",
-        choices=["extract", "transform_load", "general_query"],
+        choices=["extract", "transform_load", "crud"],
         help="Action to perform (extract, transform_load, general_query).",
     )
 
@@ -66,10 +66,10 @@ def main():
     elif args.action == "transform_load":
         print("Transforming data...")
         load()
-    elif args.action == "general_query":
+    elif args.action == "crud":
         crud()
-    else:
-        print(f"Unknown action: {args.action}")
+    # else:
+    #     print(f"Unknown action: {args.action}")
 
 
 if __name__ == "__main__":
