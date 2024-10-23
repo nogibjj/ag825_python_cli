@@ -56,7 +56,7 @@ def delete(database):
                    """
     )
     conn.commit()
-    print("The record has been deelted from the database (no output will be seen here)")
+    print("The record has been deleted from the database (no output will be seen here)")
     cursor.execute("SELECT * FROM CancerDB WHERE id='123123123' LIMIT 5")
     print(cursor.fetchall())
     conn.close()

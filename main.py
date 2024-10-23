@@ -1,30 +1,76 @@
 from extract import extract
 from transform_load import load
-
-# from query import create
-# from query import read
-# from query import update
-# from query import delete
 from query import crud
+import sys
+import argparse
 
-if __name__ == "__main__":
+# @click.command()
+# @click.option("--name", default="World", help="Name to greet")
+# def run_crud():
+#     crud()
+
+
+# if __name__ == "__main__":
+#     url = "https://raw.githubusercontent.com/nogibjj/ag825_sqlite_lab/refs/heads/main/Cancer_Data.csv"
+#     file_path = "Cancer_Data.csv"
+#     database = "CancerDB.db"
+
+#     # Extract
+#     print("Extracting data...")
+#     extract(url, file_path)
+
+#     # Transform and load
+#     print("Transforming data...")
+#     load()
+
+#     # Query
+#     print("Querying data...")
+#     crud()
+
+
+# from mylib.extract import extract
+# from mylib.transform_load import load
+# from mylib.query import (
+#     general_query,
+# )
+
+
+def handle_arguments(args):
+    """Add action based on initial calls"""
+    parser = argparse.ArgumentParser(description="CRUD Script")
+    parser.add_argument(
+        "action",
+        choices=["extract", "transform_load", "general_query"],
+        help="Action to perform (extract, transform_load, general_query).",
+    )
+
+    # Add query argument if the action is general_query
+    if len(args) > 0 and args[0] == "general_query":
+        parser.add_argument("query", help="The SQL query to execute.")
+
+    # Parse arguments
+    return parser.parse_args(args)
+
+
+def main():
     url = "https://raw.githubusercontent.com/nogibjj/ag825_sqlite_lab/refs/heads/main/Cancer_Data.csv"
     file_path = "Cancer_Data.csv"
     database = "CancerDB.db"
 
-    # Extract
-    print("Extracting data...")
-    extract(url, file_path)
+    """handles all the cli commands"""
+    args = handle_arguments(sys.argv[1:])
 
-    # Transform and load
-    print("Transforming data...")
-    load()
+    if args.action == "extract":
+        print("Extracting data...")
+        extract(url, file_path)
+    elif args.action == "transform_load":
+        print("Transforming data...")
+        load()
+    elif args.action == "general_query":
+        crud()
+    else:
+        print(f"Unknown action: {args.action}")
 
-    # Query
-    print("Querying data...")
-    crud()
-    # read(database)
-    # create(database)
 
-    # update(database)
-    # delete(database)
+if __name__ == "__main__":
+    main()
