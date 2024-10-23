@@ -37,11 +37,17 @@ import argparse
 
 def handle_arguments(args):
     """Add action based on initial calls"""
-    parser = argparse.ArgumentParser(description="CRUD Script")
+    parser = argparse.ArgumentParser(
+        description="CRUD Script", formatter_class=argparse.RawTextHelpFormatter
+    )
     parser.add_argument(
         "action",
         choices=["extract", "transform_load", "crud"],
-        help="Action to perform (extract, transform_load, general_query).",
+        help="""We can perform the following actions (in order):
+        - extract: Extract data from the .csv file
+        - transform_load: Create the database (.db file) and load data into the database
+        - CRUD: Perform all 4 CRUD operations
+        """,
     )
 
     # Add query argument if the action is general_query

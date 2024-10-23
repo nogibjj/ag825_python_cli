@@ -1,4 +1,4 @@
-# Mini Project: Python Script interacting with SQL Database
+# Mini Project: Python Script with Command Line Interface (CLI)
 Adil Keku Gazder <br>
 ag825, adil.gazder@duke.edu <br>
 IDS 706: Data Engineering Systems <br>
@@ -6,9 +6,14 @@ Duke University, Fall 2024 <br >
 ##
 
 ### About the project
-[![CI](https://github.com/nogibjj/ag825_sqlite_lab/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/ag825_sqlite_lab/actions/workflows/cicd.yml) <br>
+[![CI](https://github.com/nogibjj/ag825_python_cli/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/ag825_python_cli/actions/workflows/cicd.yml) <br>
 
-The aim with this project was to read a .csv file, read it into a database and perform CRUD (Create, Read, Update, Delete) operations on the database. We also use matrix testing to ensure that this file runs on the following versions of Python:
+The aim with this project was to read a .csv file, read it into a database and perform CRUD (Create, Read, Update, Delete) operations on the database. We build on a previous project with the main aim to create a command line interface for the user to interact with. 
+
+![](CLI.png)
+
+
+We also use matrix testing to ensure that this file runs on the following versions of Python:
 - Python 3.7
 - Python 3.8
 - Python 3.9
